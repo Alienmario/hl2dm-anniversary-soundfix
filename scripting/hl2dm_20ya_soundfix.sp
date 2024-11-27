@@ -22,7 +22,7 @@ public void OnPluginStart()
 Action Hook_Sound(int clients[MAXPLAYERS], int &numClients, char sample[PLATFORM_MAX_PATH], int &entity, int &channel, float &volume,
 						int &level, int &pitch, int &flags, char soundEntry[PLATFORM_MAX_PATH], int &seed)
 {
-	if (pitch == 100)
+	if (pitch == 100 && !(flags & SND_STOP || volume == 0.0))
 	{
 		pitch = 99;
 		return Plugin_Changed;
@@ -32,7 +32,7 @@ Action Hook_Sound(int clients[MAXPLAYERS], int &numClients, char sample[PLATFORM
 
 Action Hook_AmbientSound(char sample[PLATFORM_MAX_PATH], int &entity, float &volume, int &level, int &pitch, float pos[3], int &flags, float &delay)
 {
-	if (pitch == 100)
+	if (pitch == 100 && !(flags & SND_STOP || volume == 0.0))
 	{
 		pitch = 99;
 		return Plugin_Changed;
