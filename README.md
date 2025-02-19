@@ -1,3 +1,5 @@
+## OBSOLETE - Fixed by sdk/game update on 2025-02-18
+
 # hl2dm-anniversary-soundfix
  Fixes sound playback by slightly modifying the pitch of sounds that have default pitch.
  
